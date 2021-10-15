@@ -22,7 +22,8 @@ button {
     outline: none;
     border-radius: 2rem;
     font-size: 2rem;
-    transition: background 0.5s;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.5s;
 }
 
 button:hover {
@@ -31,6 +32,7 @@ button:hover {
 
 button:active {
     background-color: white;
+    color: white;
 }
 
 .orange {
