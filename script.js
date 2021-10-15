@@ -4,32 +4,54 @@ let selectedOperation = undefined;
 let hasResult = false
 
 let display = document.getElementById('display')
+display.value = "0"
+
+function negative() {
+    if (display.value.indexOf('-') == -1) {
+        if (display.value != "0") {
+            display.value = "-" + display.value
+        }
+    } else {
+        display.value = display.value.slice(1, display.value.length)
+    }
+}
 
 function writeDisplay(number) {
     if(hasResult) {
-        display.value = ""
+        display.value = "0"
         hasResult = false
     }
     if(display.value.length <= 14) {
-        display.value += number
+        if(number == '.') {
+            if(display.value.indexOf('.') == -1) {
+                display.value += number
+            }
+        } else {
+            if(display.value == "0") {
+                display.value = number
+            } else {
+                display.value += number
+            }
+        }
     }
 }
 
 function operation(operation) {
-    if (value1 == undefined) {
-        value1 = (display.value == "" ? "0":display.value)
+    if (selectedOperation == undefined) {
+        value1 = display.value
         selectedOperation = operation
-        display.value = ""
+        display.value = "0"
     } else {
-        value2 = (display.value == "" ? "0":display.value)
-        value1 = getResult()
+        if(!hasResult) {
+            value1 = getResult()
+            display.value = value1
+        }
         selectedOperation = operation
-        display.value = ""
     }
 }
 
 function clean() {
-    display.value = ""
+    display.value = "0"
     value1 = undefined
     value2 = undefined
     selectedOperation = undefined
@@ -41,12 +63,11 @@ function result() {
 }
 
 function getResult() {
-    let result = ""
+    let result;
     if(selectedOperation == undefined) {
         result = display.value
     } else {
         value2 = display.value
-        value2 = (value2 == "" ? "0":value2)
         result = `${eval(`${value1} ${selectedOperation} ${value2}`)}`
         result = result.slice(0,16)
         value2 = undefined

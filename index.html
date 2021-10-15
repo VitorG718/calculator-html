@@ -10,11 +10,11 @@
 <body>
     <div class="content">
         <div class="display">
-            <input id="display" type="text" placeholder="0" disabled>
+            <input id="display" type="text" disabled>
         </div>
         <div class="rows">
             <button class="gray small" onclick="clean()">CE</button>
-            <button class="gray small" onclick="operation('√')">√</button>
+            <button class="gray small" onclick="negative()">+/-</button>
             <button class="gray small" onclick="operation('%')">%</button>
             <button class="orange small" onclick="operation('/')">/</button>
         </div>
@@ -37,7 +37,8 @@
             <button class="orange small" onclick="operation('+')">+</button>
         </div>
         <div class="rows">
-            <button class="darkgray large" onclick="writeDisplay(0)">0</button>
+            <button class="darkgray small" onclick="writeDisplay(0)">0</button>
+            <button class="darkgray small" onclick="writeDisplay('.')">.</button>
             <button class="orange large" onclick="result()">=</button>
         </div>
     </div>
