@@ -1,8 +1,76 @@
 body {
     margin: 0;
     padding: 0;
+    height: 100vh;
     background-color: black;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+}
+
+.rows {
+    display: flex;
+    width: 22rem;
+    height: 5rem;
+    justify-content: space-between;
+    padding: 0.2rem;
+}
+
+button {
+    color: white;
+    border: none;
+    outline: none;
+    border-radius: 2rem;
+    font-size: 2rem;
+    transition: background 0.5s;
+}
+
+button:hover {
+    border: 2px white solid;
+}
+
+button:active {
+    background-color: white;
+}
+
+.orange {
+    background-color: tomato;
+}
+
+.gray {
+    background-color: lightgrey;
+    color: black;
+}
+
+.darkgray {
+    background-color: darkgray;
+}
+
+.small {
+    width: 5rem;
+}
+
+.large {
+    width: 10.5rem;
+}
+
+.display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 0.8rem;
+}
+
+#display {
+    border: 0;
+    height: 3.5rem;
+    width: 20rem;
+    color: white;
+    border: 3px white solid;
+    background: none;
+    border-radius: 1.5rem;
+    padding: 0.4rem 0.8rem;
+    font-size: xx-large;
+    text-align: right;
+    outline: none;
 }
