@@ -13,33 +13,34 @@
             <input id="display" type="text" placeholder="0" disabled>
         </div>
         <div class="rows">
-            <button class="gray small">CE</button>
-            <button class="gray small">√</button>
-            <button class="gray small">%</button>
-            <button class="orange small">/</button>
+            <button class="gray small" onclick="clean()">CE</button>
+            <button class="gray small" onclick="operation('√')">√</button>
+            <button class="gray small" onclick="operation('%')">%</button>
+            <button class="orange small" onclick="operation('/')">/</button>
         </div>
         <div class="rows">
-            <button class="darkgray small">7</button>
-            <button class="darkgray small">8</button>
-            <button class="darkgray small">9</button>
-            <button class="orange small">X</button>
+            <button class="darkgray small" onclick="writeDisplay(7)">7</button>
+            <button class="darkgray small" onclick="writeDisplay(8)">8</button>
+            <button class="darkgray small" onclick="writeDisplay(9)">9</button>
+            <button class="orange small" onclick="operation('*')">X</button>
         </div>
         <div class="rows">
-            <button class="darkgray small">4</button>
-            <button class="darkgray small">5</button>
-            <button class="darkgray small">6</button>
-            <button class="orange small">-</button>
+            <button class="darkgray small" onclick="writeDisplay(4)">4</button>
+            <button class="darkgray small" onclick="writeDisplay(5)">5</button>
+            <button class="darkgray small" onclick="writeDisplay(6)">6</button>
+            <button class="orange small" onclick="operation('-')">-</button>
         </div>
         <div class="rows">
-            <button class="darkgray small">1</button>
-            <button class="darkgray small">2</button>
-            <button class="darkgray small">3</button>
-            <button class="orange small">+</button>
+            <button class="darkgray small" onclick="writeDisplay(1)">1</button>
+            <button class="darkgray small" onclick="writeDisplay(2)">2</button>
+            <button class="darkgray small" onclick="writeDisplay(3)">3</button>
+            <button class="orange small" onclick="operation('+')">+</button>
         </div>
         <div class="rows">
-            <button class="darkgray large">0</button>
-            <button class="orange large">=</button>
+            <button class="darkgray large" onclick="writeDisplay(0)">0</button>
+            <button class="orange large" onclick="result()">=</button>
         </div>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
